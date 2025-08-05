@@ -16,13 +16,14 @@ async def search(image: UploadFile = File(...)):
         
     img = Image.open(image_path).convert("RGB")
 
-    return "Search API is working"
+    return "Search API is working2"
 
 
 
 @app.get("/")
 def read_root():
     return "Hello World!"
+
 
 
 
