@@ -15,14 +15,3 @@ def search(image: UploadFile = File(...)):
 @app.get("/")
 def read_root():
     return "Hello World!"
-
-
-
-
-
-
-
-
-
-
-
