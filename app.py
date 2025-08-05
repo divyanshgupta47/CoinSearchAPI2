@@ -18,13 +18,14 @@ async def search(image: UploadFile = File(...)):
     img = Image.open(image_path).convert("RGB")
     embedding = get_image_vector(img)
     result = search_azure(embedding)
-    return "Search API is working3"
+    return "Search API is working4"
 
 
 
 @app.get("/")
 def read_root():
     return "Hello World!"
+
 
 
 
