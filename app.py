@@ -1,4 +1,6 @@
 from fastapi  import FastAPI, File, UploadFile
+
+import uvicorn
 app = FastAPI()
 
 
@@ -12,6 +14,7 @@ async def search(image: UploadFile = File(...)):
 @app.get("/")
 def read_root():
     return "Hello World!"
+
 
 
 
