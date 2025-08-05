@@ -1,1 +1,8 @@
-import streamlit as st
+from PIL import Image
+
+
+def get_image_vector(image: Image.Image):
+    return "Ok"
+
+def search_azure(embedding):    
+    return "Ok"
