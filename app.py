@@ -4,9 +4,7 @@ from fastapi  import FastAPI, File, UploadFile
 app = FastAPI()
 
 @app.post("/search")
-def search(image: UploadFile = File(...)):
-    if not image:
-        return JSONResponse(content={"error": "No image uploaded"}, status_code=400)
+def search():
 
     return "Search API is working"
 
@@ -15,3 +13,4 @@ def search(image: UploadFile = File(...)):
 @app.get("/")
 def read_root():
     return "Hello World!"
+
