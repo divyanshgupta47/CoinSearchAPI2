@@ -1,8 +1,13 @@
-from fastapi  import FastAPI
-import uvicorn
-
+from fastapi  import FastAPI, File, UploadFile
 app = FastAPI()
 
+
+@app.post("/search")
+async def search(image: UploadFile = File(...)):
+    if not image:
+        return JSONResponse(content={"error": "No image uploaded"}, status_code=400)
+
+    return "Search API is working"
 
 @app.get("/")
 def read_root():
