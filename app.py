@@ -1,5 +1,6 @@
 from fastapi  import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
+from PIL import Image
 import tempfile
 
 app = FastAPI()
@@ -12,6 +13,8 @@ async def search(image: UploadFile = File(...)):
     with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
         image_path = tmp.name
         tmp.write(await image.read())
+        
+    img = Image.open(image_path).convert("RGB")
 
     return "Search API is working"
 
@@ -20,6 +23,7 @@ async def search(image: UploadFile = File(...)):
 @app.get("/")
 def read_root():
     return "Hello World!"
+
 
 
 
