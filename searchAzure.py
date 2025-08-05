@@ -1,5 +1,7 @@
 import streamlit as st
 import requests
+import torch
+from torchvision import models, transforms
 from PIL import Image
 
 
