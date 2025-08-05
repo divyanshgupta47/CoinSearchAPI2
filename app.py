@@ -1,5 +1,6 @@
 from fastapi  import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
+from searchAzure import get_image_vector, search_azure
 from PIL import Image
 import tempfile
 
@@ -23,6 +24,7 @@ async def search(image: UploadFile = File(...)):
 @app.get("/")
 def read_root():
     return "Hello World!"
+
 
 
 
